@@ -5,7 +5,7 @@ var ComposeSchema = new mongoose.Schema({
    cc: String,
    subject: String,
    description: String,
-   attachment[]: String,
+   attachment: String,
    createdBy: String,
    createdAt: Date
 

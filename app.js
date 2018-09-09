@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 
 const userController = require('./controllers/user')
 const inboxController = require('./controllers/inbox')
+const composeController = require('./controllers/compose')
 
 var app = express();
 
@@ -39,5 +40,10 @@ app.get('/api/v1/inbox', inboxController.getAllInbox)
 app.post('/api/v1/inbox', inboxController.postNewInbox)
 app.put('/api/v1/inbox/:id', inboxController.updateInboxById)
 app.delete('/api/v1/inbox/:id', inboxController.delInboxById)
+
+app.get('/api/v1/compose', composeController.getAllCompose)
+app.post('/api/v1/compose', composeController.postNewCompose)
+app.put('/api/v1/compose/:id', composeController.updateComposeById)
+app.delete('/api/v1/compose/:id', composeController.delComposeById)
 
 module.exports = app;
