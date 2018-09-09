@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const userController = require('./controllers/user')
+const inboxController = require('./controllers/inbox')
 
 var app = express();
 
@@ -33,5 +34,10 @@ app.get('/api/v1/users', userController.getAllUsers)
 app.post('/api/v1/users', userController.postNewUsers)
 app.put('/api/v1/users/:id', userController.updateUsersById)
 app.delete('/api/v1/users/:id', userController.delUsersById)
+
+app.get('/api/v1/inbox', inboxController.getAllInbox)
+app.post('/api/v1/inbox', inboxController.postNewInbox)
+app.put('/api/v1/inbox/:id', inboxController.updateInboxById)
+app.delete('/api/v1/inbox/:id', inboxController.delInboxById)
 
 module.exports = app;
